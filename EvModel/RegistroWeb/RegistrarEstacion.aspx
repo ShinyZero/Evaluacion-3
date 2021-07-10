@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <label class="form-label" for="IdTxt">Id</label>
+                        <label class="form-label" for="IdTxt">ID</label>
                         <asp:TextBox runat="server" ID="IdTxt" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                             ErrorMessage="Debe ingresar su ID" CssClass="text-danger"
@@ -40,8 +40,8 @@
                         <label class="form-label" for="CapCargaTxt">Capacidad de Carga</label>
                         <asp:TextBox runat="server" ID="CapCargaTxt" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                            ErrorMessage="" CssClass="text-danger"
-                            ControlToValidate="CargaTxt">
+                            ErrorMessage="Exede la Capacidad de Carga" CssClass="text-danger"
+                            ControlToValidate="CapCargaTxt">
                         </asp:RequiredFieldValidator>
                     </div>
                     <div class="mb-3">

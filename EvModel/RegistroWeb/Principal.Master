@@ -6,9 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Evaluacion 3</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title class="text-black">Evaluacion 3</title>
 </head>
 <body>
     <header>
@@ -21,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="">Registrar Estacion</a>
-        <a class="nav-link" href="">Ver Estaciones</a>
+        <a class="nav-link" href="VerEstacion.aspx">Ver Estaciones</a>
         <a class="nav-link" href="">Registrar Punto de Carga</a>
         <a class="nav-link" href="">Ver Puntos de Cargas</a>
       </div>

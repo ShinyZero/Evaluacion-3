@@ -11,12 +11,12 @@ namespace EvModel
         private string id;
         private string direccion;
         private string region;
-        private int capCarga;
+        private string capCarga;
         private string horario;
 
         public string Direccion { get => direccion; set => direccion = value; }
         public string Region { get => region; set => region = value; }
-        public int CapCarga { get => capCarga; set => capCarga = value; }
+        public string CapCarga { get => capCarga; set => capCarga = value; }
         public string Horario { get => horario; set => horario = value; }
         public string Id { get => id; set => id = value; }
     }

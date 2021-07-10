@@ -30,7 +30,7 @@ namespace RegistroWeb
                 string id = IdTxt.Text.Trim();
                 string direccion = DireccionTxt.Text.Trim();
                 String region = estacionDBL.SelectedValue;
-                int CapCarga = Convert.ToInt32(CapCargaTxt);
+                string CapCarga = CapCargaTxt.Text.Trim();
                 string horario = horarioTxt.Text.Trim();
 
                 Estacion es = new Estacion();

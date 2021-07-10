@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegistrarEstacion.aspx" />
+    <Content Include="VerEstacion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +86,13 @@
     </Compile>
     <Compile Include="RegistrarEstacion.aspx.designer.cs">
       <DependentUpon>RegistrarEstacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerEstacion.aspx.cs">
+      <DependentUpon>VerEstacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerEstacion.aspx.designer.cs">
+      <DependentUpon>VerEstacion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

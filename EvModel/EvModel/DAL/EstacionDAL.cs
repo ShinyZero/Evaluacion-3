@@ -75,14 +75,14 @@ namespace EvModel.DAL
                 Region="Magallanes"
             },
         };
-        public void Add(Estacion e)
-        {
-            estaciones.Add(e);
-        }
 
         public List<Estacion> GetAll()
         {
             return estaciones;
+        }
+        public void Add(Estacion e)
+        {
+            estaciones.Add(e);
         }
 
         public void Remove(String Id)
