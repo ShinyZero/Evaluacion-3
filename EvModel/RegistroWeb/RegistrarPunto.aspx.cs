@@ -13,7 +13,12 @@ namespace RegistroWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                List<PuntoCarga> puntos = new PuntoCargaDAL().GetAll();
+                TiposRd1.DataSource = puntos;
+                TiposRd1.DataBind();
+            }
         }
 
         protected void RegistrarBtn_Click(object sender, EventArgs e)

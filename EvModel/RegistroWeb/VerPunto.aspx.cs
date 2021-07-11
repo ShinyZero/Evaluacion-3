@@ -32,6 +32,15 @@ namespace RegistroWeb
             PuntoTabla(puntosCargaDAL.GetAll());
         }
 
+        protected void TiposRd1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(1000);
+            int tipoSel = Convert.ToInt32(TiposRd1.SelectedValue);
+
+            //List<PuntoCarga> filtrar = puntosCargaDAL.GetAll(tipoSel);
+            //PuntoTabla(filtrar);
+        }
+
         protected void todosChx_CheckedChanged(object sender, EventArgs e)
         {
             TiposRd1.Enabled = !todosChx.Checked;
@@ -40,14 +49,6 @@ namespace RegistroWeb
                 PuntoTabla(puntosCargaDAL.GetAll());
             }
         }
-
-        protected void TiposRd1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            System.Threading.Thread.Sleep(1000);
-            int tipoSel = Convert.ToInt32(TiposRd1.SelectedValue);
-
-            List<PuntoCarga> filtrada = puntosCargaDAL.GetAll(tipoSel);
-            PuntoTabla(filtrada);
-        }
+      
     }
 }
