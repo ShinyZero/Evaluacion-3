@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="RegistrarEstacion.aspx.cs" Inherits="RegistroWeb.RegistrarEstacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Menu" runat="server">
      <style type="text/css">
-        #Contenido_TipoRDL label{
+        #Menu_TipoRDL label{
             margin-left: 10px;
         }
     </style>
@@ -27,10 +27,9 @@
                     <div class="mb-3">
                         <label class="form-label" for="DireccionTxt">Direccion</label>
                         <asp:TextBox runat="server" ID="DireccionTxt" CssClass="form-control"></asp:TextBox>
-                        <asp:CustomValidator ID="DireccionCV" runat="server" ErrorMessage="CustomValidator"
-                            CssClass="text-danger" ControlToValidate="DireccionTxt" OnServerValidate="DireccionCV_ServerValidate"
-                            ValidateEmptyText="true"
-                            ></asp:CustomValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFileValidator3" runat="server" ErrorMessage="Debe ingresar una direccion"
+                            CssClass="text-danger" ControlToValidate="DireccionTxt" >
+                        </asp:RequiredFieldValidator>                         
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="estacionDBL">Region</label>

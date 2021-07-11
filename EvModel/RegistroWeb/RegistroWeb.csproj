@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegistrarEstacion.aspx" />
+    <Content Include="RegistrarPunto.aspx" />
     <Content Include="VerEstacion.aspx" />
+    <Content Include="VerPunto.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,12 +89,26 @@
     <Compile Include="RegistrarEstacion.aspx.designer.cs">
       <DependentUpon>RegistrarEstacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarPunto.aspx.cs">
+      <DependentUpon>RegistrarPunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarPunto.aspx.designer.cs">
+      <DependentUpon>RegistrarPunto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerEstacion.aspx.cs">
       <DependentUpon>VerEstacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerEstacion.aspx.designer.cs">
       <DependentUpon>VerEstacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerPunto.aspx.cs">
+      <DependentUpon>VerPunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPunto.aspx.designer.cs">
+      <DependentUpon>VerPunto.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

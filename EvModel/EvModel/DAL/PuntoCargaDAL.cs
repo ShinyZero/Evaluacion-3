@@ -20,11 +20,11 @@ namespace EvModel.DAL
             },
             new PuntoCarga()
             {
-                Identificador="Dual"
+                Tipo="Dual"
             },
             new PuntoCarga()
             {
-                Identificador="Electrico"
+                Tipo="Electrico"
             },
         };
 

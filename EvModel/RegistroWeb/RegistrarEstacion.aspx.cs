@@ -62,11 +62,6 @@ namespace RegistroWeb
             horarioTxt.Text = "";
         }
 
-        protected void DireccionCV_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-
-        }
-
         protected void HorarioCV_ServerValidate(object source, ServerValidateEventArgs args)
         {
 

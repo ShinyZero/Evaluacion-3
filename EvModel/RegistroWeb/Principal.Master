@@ -18,10 +18,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="">Registrar Estacion</a>
+        <a class="nav-link active" aria-current="page" href="RegistrarEstacion.aspx">Registrar Estacion</a>
         <a class="nav-link" href="VerEstacion.aspx">Ver Estaciones</a>
-        <a class="nav-link" href="">Registrar Punto de Carga</a>
-        <a class="nav-link" href="">Ver Puntos de Cargas</a>
+        <a class="nav-link" href="RegistrarPunto.aspx">Registrar Punto de Carga</a>
+        <a class="nav-link" href="VerPunto.aspx">Ver Puntos de Cargas</a>
       </div>
     </div>
   </div>
