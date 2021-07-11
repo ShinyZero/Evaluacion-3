@@ -15,10 +15,10 @@ namespace RegistroWeb
         {
             if(!IsPostBack)
             {
-                List<Estacion> estaciones = new EstacionDAL().GetAll();
-                estacionDBL.DataSource = estaciones;
+                EstacionDAL regiones = new EstacionDAL();
+                estacionDBL.DataSource = regiones.GetAllRegiones();
                 estacionDBL.DataTextField = "Region";
-                estacionDBL.DataValueField = "Region";
+                estacionDBL.DataValueField = "NRegion";
                 estacionDBL.DataBind();
             }
             
@@ -29,14 +29,15 @@ namespace RegistroWeb
             {
                 string id = IdTxt.Text.Trim();
                 string direccion = DireccionTxt.Text.Trim();
-                String region = estacionDBL.SelectedValue;
+                String regiones = estacionDBL.SelectedValue; 
                 string CapCarga = CapCargaTxt.Text.Trim();
                 string horario = horarioTxt.Text.Trim();
 
                 Estacion es = new Estacion();
+
                 es.Id = id;
                 es.Direccion = direccion;
-                es.Region = region;
+                es.Region = regiones;
                 es.CapCarga = CapCarga;
                 es.Horario = horario;
 

@@ -8,78 +8,101 @@ namespace EvModel.DAL
 {
     public class EstacionDAL
     {
-        private static List<Estacion> estaciones = new List<Estacion>()
+        private static List<Estacion> estaciones = new List<Estacion>();
+        public static List<Estacion> regiones = new List<Estacion>()
         {
             new Estacion()
             {
-                Region="Arica y Parinacota"
+                Region="Arica y Parinacota",
+                NRegion="XV"
             },
             new Estacion()
             {
-                Region="Tarapaca"
+                Region="Tarapaca",
+                NRegion="I"
             },
             new Estacion()
             {
-                Region="Antofagasta"
+                Region="Antofagasta",
+                NRegion="II"
             },
             new Estacion()
             {
-                Region="Atacama"
+                Region="Atacama",
+                NRegion="III"
             },
             new Estacion()
             {
-                Region="Coquimbo"
+                Region="Coquimbo",
+                NRegion="IV"
             },
             new Estacion()
             {
-                Region="Valparaiso"
+                Region="Valparaiso",
+                NRegion="V"
             },
             new Estacion()
             {
-                Region="Region Metropolitana"
+                Region="Region Metropolitana",
+                NRegion="Region M"
             },
             new Estacion()
             {
-                Region="Bernardo O'higgins"
+                Region="Bernardo O'higgins",
+                NRegion="VI"
             },
             new Estacion()
             {
-                Region="Maule"
+                Region="Maule",
+                NRegion="VII"
             },
             new Estacion()
             {
-                Region="Ñuble"
+                Region="Ñuble",
+                NRegion="XVI"
             },
             new Estacion()
             {
-                Region="BioBio"
+                Region="BioBio",
+                NRegion="VIII"
             },
             new Estacion()
             {
-                Region="Araucania"
+                Region="Araucania",
+                NRegion="IX"
             },
             new Estacion()
             {
-                Region="Los Rios"
+                Region="Los Rios",
+                NRegion="XIV"
             },
             new Estacion()
             {
-                Region="Los Lagos"
+                Region="Los Lagos",
+                NRegion="X"
             },
             new Estacion()
             {
-                Region="Aysén"
+                Region="Aysén",
+                NRegion="XI"
             },
             new Estacion()
             {
-                Region="Magallanes"
+                Region="Magallanes",
+                NRegion="XII"
             },
         };
+
+        public List<Estacion> GetAllRegiones()
+        {
+            return regiones;
+        }
 
         public List<Estacion> GetAll()
         {
             return estaciones;
         }
+
         public void Add(Estacion e)
         {
             estaciones.Add(e);

@@ -27,7 +27,7 @@ namespace RegistroWeb
 
         protected void estacionesGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "eliminar")
+            if (e.CommandName == "Eliminar")
             {
                 String IdAEliminar = e.CommandArgument.ToString();
                 estacionesDAL.Remove(IdAEliminar);
