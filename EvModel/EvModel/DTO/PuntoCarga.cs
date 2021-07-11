@@ -9,12 +9,12 @@ namespace EvModel
     public partial class PuntoCarga
     {
         private string identificador;
-        private string tipo;
-        private int capMax;
+        private int tipo;
+        private string capMax;
         private string vidaUtil;
 
-        public string Tipo { get => tipo; set => tipo = value; }
-        public int CapMax { get => capMax; set => capMax = value; }
+        public int Tipo { get => tipo; set => tipo = value; }
+        public string CapMax { get => capMax; set => capMax = value; }
         public string VidaUtil { get => vidaUtil; set => vidaUtil = value; }
         public string Identificador { get => identificador; set => identificador = value; }
     }

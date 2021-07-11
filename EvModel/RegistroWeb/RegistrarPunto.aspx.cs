@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EvModel;
+using EvModel.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +13,39 @@ namespace RegistroWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void RegistrarBtn_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                string identificador = IdeTxt.Text.Trim();
+                string capMax = CapMaxTxt.Text.Trim();
+                int tipo = Convert.ToInt32(TiposRd1.SelectedValue);
+                string vida = Vidatxt.Text.Trim();
 
+                PuntoCarga p = new PuntoCarga();
+                p.Identificador = identificador;
+                p.CapMax = capMax;
+                p.Tipo = tipo;
+                p.VidaUtil = vida;
+                new PuntoCargaDAL().Add(p);
+                mensajeLb1.Text = "Punto Carga Registrado";
+                limpiar();
+
+            }
+            else
+            {
+
+            }
+        }
+        private void limpiar()
+        {
+            IdeTxt.Text = "";
+            CapMaxTxt.Text = "";
+            TiposRd1.SelectedIndex = 0;
+            Vidatxt.Text = "";
         }
     }
 }

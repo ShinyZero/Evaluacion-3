@@ -10,22 +10,8 @@ namespace EvModel.DAL
     {
         private static List<PuntoCarga> puntoCargas = new List<PuntoCarga>()
         {
-            new PuntoCarga()
-            {
-                Tipo="Trafico"
-            },
-            new PuntoCarga()
-            {
-                Tipo="Consumo"
-            },
-            new PuntoCarga()
-            {
-                Tipo="Dual"
-            },
-            new PuntoCarga()
-            {
-                Tipo="Electrico"
-            },
+           
+            
         };
 
         public void Add(PuntoCarga p)
