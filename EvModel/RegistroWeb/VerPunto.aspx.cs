@@ -13,9 +13,9 @@ namespace RegistroWeb
     {
 
         PuntoCargaDAL puntosCargaDAL = new PuntoCargaDAL();
-        private void PuntoTabla(List<PuntoCarga> puntos)
+        private void PuntoTabla(List<PuntoCarga> cargas)
         {
-            PuntoCargaGrid.DataSource = puntos;
+            PuntoCargaGrid.DataSource = cargas;
             PuntoCargaGrid.DataBind();
         }
 
@@ -29,21 +29,23 @@ namespace RegistroWeb
 
         protected void PuntoCargaGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            //Boton Actualizar
+
             PuntoTabla(puntosCargaDAL.GetAll());
         }
 
-        protected void TiposRd1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void TipoRdl_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Threading.Thread.Sleep(1000);
-            int tipoSel = Convert.ToInt32(TiposRd1.SelectedValue);
+            string tipoSel = TipoRdl.SelectedValue;
 
-            //List<PuntoCarga> filtrar = puntosCargaDAL.GetAll(tipoSel);
-            //PuntoTabla(filtrar);
+            List<PuntoCarga> filtrar = puntosCargaDAL.GetAllFiltro(tipoSel);
+            PuntoTabla(filtrar);
         }
 
         protected void todosChx_CheckedChanged(object sender, EventArgs e)
         {
-            TiposRd1.Enabled = !todosChx.Checked;
+            TipoRdl.Enabled = !todosChx.Checked;
             if (todosChx.Checked)
             {
                 PuntoTabla(puntosCargaDAL.GetAll());

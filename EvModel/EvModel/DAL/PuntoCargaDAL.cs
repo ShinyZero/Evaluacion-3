@@ -8,10 +8,17 @@ namespace EvModel.DAL
 {
     public class PuntoCargaDAL
     {
-        private static List<PuntoCarga> puntoCargas = new List<PuntoCarga>()
+        private static List<PuntoCarga> puntoCargas = new List<PuntoCarga>();
+        public static List<PuntoCarga> cargas = new List<PuntoCarga>()
         {
-           
-            
+           new PuntoCarga()
+           {
+               Tipo="Dual"
+           },
+          new PuntoCarga()
+            {
+               Tipo = "Electrico"
+            }
         };
 
         public void Add(PuntoCarga p)
@@ -27,6 +34,29 @@ namespace EvModel.DAL
         public List<PuntoCarga> GetAll()
         {
             return puntoCargas; 
+        }
+
+        public List<PuntoCarga> GetAllTipo()
+        {
+            return cargas;
+        }
+
+        public List<PuntoCarga> GetAllFiltro(string tipo)
+        {
+
+            List<PuntoCarga> aux = new List<PuntoCarga>();
+            foreach (PuntoCarga t in puntoCargas)
+            {
+                if (t.Tipo == tipo)
+                {
+                    aux.Add(t);
+                }
+                return aux;
+
+                //return puntoCargas.FindAll(p => p.Tipo.Equals(tipo));
+
+            }
+            
         }
     }
 }

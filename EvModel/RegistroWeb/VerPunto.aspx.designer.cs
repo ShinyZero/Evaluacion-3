@@ -40,13 +40,13 @@ namespace RegistroWeb {
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
         
         /// <summary>
-        /// Control TiposRd1.
+        /// Control TipoRdl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TiposRd1;
+        protected global::System.Web.UI.WebControls.DropDownList TipoRdl;
         
         /// <summary>
         /// Control todosChx.

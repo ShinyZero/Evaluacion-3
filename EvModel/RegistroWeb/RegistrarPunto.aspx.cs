@@ -15,9 +15,11 @@ namespace RegistroWeb
         {
             if (!IsPostBack)
             {
-                List<PuntoCarga> puntos = new PuntoCargaDAL().GetAll();
-                TiposRd1.DataSource = puntos;
-                TiposRd1.DataBind();
+                PuntoCargaDAL cargas = new PuntoCargaDAL();
+                TipoRdl.DataSource = cargas.GetAllTipo();
+                TipoRdl.DataTextField = "Tipo";
+                TipoRdl.DataValueField = "Tipo";
+                TipoRdl.DataBind();
             }
         }
 
@@ -27,7 +29,7 @@ namespace RegistroWeb
             {
                 string identificador = IdeTxt.Text.Trim();
                 string capMax = CapMaxTxt.Text.Trim();
-                int tipo = Convert.ToInt32(TiposRd1.SelectedValue);
+                string tipo = TipoRdl.SelectedValue;
                 string vida = Vidatxt.Text.Trim();
 
                 PuntoCarga p = new PuntoCarga();
@@ -49,7 +51,7 @@ namespace RegistroWeb
         {
             IdeTxt.Text = "";
             CapMaxTxt.Text = "";
-            TiposRd1.SelectedIndex = 0;
+            TipoRdl.SelectedIndex = 0;
             Vidatxt.Text = "";
         }
     }

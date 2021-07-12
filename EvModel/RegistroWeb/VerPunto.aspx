@@ -11,8 +11,8 @@
             </asp:UpdateProgress>
 
     <!-- filtro -->
-    <asp:DropDownList ID="TiposRd1" runat="server" Enabled="false"
-        AutoPostBack="true" OnSelectedIndexChanged="TiposRd1_SelectedIndexChanged">
+    <asp:DropDownList ID="TipoRdl" runat="server" Enabled="false"
+        AutoPostBack="true" OnSelectedIndexChanged="TipoRdl_SelectedIndexChanged">
         <asp:ListItem Value="1" Selected="True" Text="Dual"></asp:ListItem>
         <asp:ListItem Value="2" Text="Electrico"></asp:ListItem>
     </asp:DropDownList>
@@ -26,14 +26,14 @@
             AutoGenerateColumns="false" CssClass="table table-hover" OnRowCommand="PuntoCargaGrid_RowCommand"
             EmptyDataText="">
             <Columns>
-                <asp:BoundField HeaderText="Identificador" DataField="IdeTxt" />
-                <asp:BoundField HeaderText="Capacidad Maxima" DataField="CapMaxTxt" />
-                <asp:BoundField HeaderText="Tipo" DataField="TipoRd1"/>
-                <asp:BoundField HeaderText="Vida Util" DataField="VidaTxt"/>
+                <asp:BoundField HeaderText="Identificador" DataField="Identificador" />
+                <asp:BoundField HeaderText="Capacidad Maxima" DataField="CapMax" />
+                <asp:BoundField HeaderText="Tipo" DataField="Tipo"/>
+                <asp:BoundField HeaderText="Vida Util" DataField="VidaUtil"/>
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
                         <asp:Button ID="Button1" runat="server" Text="Actualizar"
-                            CssClass="btn btn-info" CommandName="Actualizar"
+                            CssClass="btn btn-info" CommandName="Actualizar" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

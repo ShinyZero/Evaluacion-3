@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="RegistrarPunto.aspx.cs" Inherits="RegistroWeb.RegistrarPunto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Menu" runat="server">
     <style type="text/css">
-        #Menu_NivelRd1 label{
+        #Menu_TipoRd1 label{
             margin-left: 10px;
         }
     </style>
@@ -33,8 +33,8 @@
                         </asp:RequiredFieldValidator>
                     </div>  
                     <div class="mb-3">
-                        <label class="form-label" for="TiposRd1">Tipos</label>
-                        <asp:RadioButtonList runat="server" ID="TiposRd1" CssClass="form-control">
+                        <label class="form-label" for="TipoRdl">Tipos</label>
+                        <asp:RadioButtonList runat="server" ID="TipoRdl" CssClass="form-control">
                             <asp:ListItem Value="1" Text="Dual" Selected="True"></asp:ListItem>
                             <asp:ListItem Value="2" Text="Electrico"></asp:ListItem>
                         </asp:RadioButtonList>
