@@ -30,7 +30,7 @@ namespace RegistroWeb
                 string identificador = IdeTxt.Text.Trim();
                 string capMax = CapMaxTxt.Text.Trim();
                 string tipo = TipoRdl.SelectedValue;
-                string vida = Vidatxt.Text.Trim();
+                string vida = VidaTxt.Text.Trim();
 
                 PuntoCarga p = new PuntoCarga();
                 p.Identificador = identificador;
@@ -52,7 +52,12 @@ namespace RegistroWeb
             IdeTxt.Text = "";
             CapMaxTxt.Text = "";
             TipoRdl.SelectedIndex = 0;
-            Vidatxt.Text = "";
+            VidaTxt.Text = "";
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            VidaTxt.Text = Calendar1.SelectedDate.ToShortDateString();
         }
     }
 }

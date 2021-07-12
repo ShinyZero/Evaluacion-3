@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="VerPunto.aspx.cs" Inherits="RegistroWeb.VerPunto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Menu" runat="server">
+    
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
@@ -13,8 +14,8 @@
     <!-- filtro -->
     <asp:DropDownList ID="TipoRdl" runat="server" Enabled="false"
         AutoPostBack="true" OnSelectedIndexChanged="TipoRdl_SelectedIndexChanged">
-        <asp:ListItem Value="1" Selected="True" Text="Dual"></asp:ListItem>
-        <asp:ListItem Value="2" Text="Electrico"></asp:ListItem>
+        <asp:ListItem Value="Dual" Selected="True" Text="Dual"></asp:ListItem>
+        <asp:ListItem Value="Electrico" Text="Electrico"></asp:ListItem>
     </asp:DropDownList>
 
     <asp:CheckBox ID="todosChx" Checked="true" runat="server"
@@ -33,7 +34,7 @@
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
                         <asp:Button ID="Button1" runat="server" Text="Actualizar"
-                            CssClass="btn btn-info" CommandName="Actualizar" />
+                            CssClass="btn btn-info" CommandName="Actualizar" OnClick="Button1_Click"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="CapCargaTxt">Capacidad de Carga</label>
-                        <asp:TextBox runat="server" ID="CapCargaTxt" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" Type="number" ID="CapCargaTxt" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                             ErrorMessage="Exede la Capacidad de Carga" CssClass="text-danger"
                             ControlToValidate="CapCargaTxt">

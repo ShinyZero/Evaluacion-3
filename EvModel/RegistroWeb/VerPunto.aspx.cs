@@ -51,6 +51,10 @@ namespace RegistroWeb
                 PuntoTabla(puntosCargaDAL.GetAll());
             }
         }
-      
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

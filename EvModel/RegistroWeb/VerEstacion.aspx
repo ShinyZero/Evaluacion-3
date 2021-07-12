@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="VerEstacion.aspx.cs" Inherits="RegistroWeb.VerEstacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Menu" runat="server">
+    <style type="text/css">
+        #Menu_TipoRd1 label{
+            margin-left: 10px;
+        }
+    </style>
     <div class="mt-5">
         <asp:GridView ID="estacionesGrid" runat="server"
             AutoGenerateColumns="false" CssClass="table table-hover" OnRowCommand="estacionesGrid_RowCommand"

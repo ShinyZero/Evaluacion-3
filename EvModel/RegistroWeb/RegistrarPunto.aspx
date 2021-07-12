@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="RegistrarPunto.aspx.cs" Inherits="RegistroWeb.RegistrarPunto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Menu" runat="server">
-    <style type="text/css">
-        #Menu_TipoRd1 label{
-            margin-left: 10px;
-        }
-    </style>
+    
     <div>
         <asp:Label ID="mensajeLb1" CssClass="text-success h1" runat="server"></asp:Label>
     </div>
@@ -26,7 +22,7 @@
                     </div>  
                     <div class="mb-3">
                         <label class="form-label" for="CapMaxTxt">Capacidad Maxima</label>
-                        <asp:TextBox runat="server" ID="CapMaxTxt" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" Type="number" ID="CapMaxTxt" CssClass="form-control" MaxLength="1" MinLines="1"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                             ErrorMessage="No exeda la capacidad maxima" CssClass="text-danger"
                             ControlToValidate="CapMaxTxt">
@@ -40,12 +36,14 @@
                         </asp:RadioButtonList>
                     </div>
                      <div class="mb-3">
-                        <label class="form-label" for="VidaTxt">Vida Util</label>
-                        <asp:TextBox runat="server" ID="Vidatxt" CssClass="form-control"></asp:TextBox>
+                        <label class="form-label" for="VidaTxt">Vida Util</label> 
+                        <asp:TextBox runat="server" ID="VidaTxt" CssClass="form-control"></asp:TextBox>  
+                         <asp:Calendar ID = "Calendar1" runat = "server" SelectionMode="DayWeekMonth" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
-                            ErrorMessage="No exeda la capacidad maxima" CssClass="text-danger"
+                            ErrorMessage="Seleccione una fecha" CssClass="text-danger"
                             ControlToValidate="VidaTxt">
                         </asp:RequiredFieldValidator>
+                        
                     </div> 
                     </div>
                  <div class="card-footer d-grid gap-1">

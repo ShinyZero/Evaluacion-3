@@ -44,18 +44,9 @@ namespace EvModel.DAL
         public List<PuntoCarga> GetAllFiltro(string tipo)
         {
 
-            List<PuntoCarga> aux = new List<PuntoCarga>();
-            foreach (PuntoCarga t in puntoCargas)
-            {
-                if (t.Tipo == tipo)
-                {
-                    aux.Add(t);
-                }
-                return aux;
+              return puntoCargas.FindAll(p => p.Tipo == tipo);
 
-                //return puntoCargas.FindAll(p => p.Tipo.Equals(tipo));
-
-            }
+            
             
         }
     }
