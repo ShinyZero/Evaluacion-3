@@ -22,7 +22,7 @@
                     </div>  
                     <div class="mb-3">
                         <label class="form-label" for="CapMaxTxt">Capacidad Maxima</label>
-                        <asp:TextBox runat="server" Type="number" ID="CapMaxTxt" CssClass="form-control" MaxLength="1" MinLines="1"></asp:TextBox>
+                        <asp:TextBox runat="server" Type="number" ID="CapMaxTxt" CssClass="form-control" MaxLength="1" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                             ErrorMessage="No exeda la capacidad maxima" CssClass="text-danger"
                             ControlToValidate="CapMaxTxt">

@@ -25,7 +25,7 @@
     <div class="mt-5">
         <asp:GridView ID="PuntoCargaGrid" runat="server"
             AutoGenerateColumns="false" CssClass="table table-hover" OnRowCommand="PuntoCargaGrid_RowCommand"
-            EmptyDataText="">
+            EmptyDataText="" OnSelectedIndexChanged="PuntoCargaGrid_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="Identificador" DataField="Identificador" />
                 <asp:BoundField HeaderText="Capacidad Maxima" DataField="CapMax" />

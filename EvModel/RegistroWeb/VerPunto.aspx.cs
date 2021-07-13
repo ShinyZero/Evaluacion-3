@@ -32,6 +32,7 @@ namespace RegistroWeb
             //Boton Actualizar
 
             PuntoTabla(puntosCargaDAL.GetAll());
+            
         }
 
         protected void TipoRdl_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace RegistroWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+           
+            }   
         }
     }
-}
