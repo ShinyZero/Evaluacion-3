@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label class="form-label" for="IdeTxt">Identificador</label>
-                        <asp:TextBox runat="server" ID="IdeTxt" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" Type="number" ID="IdeTxt" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                             ErrorMessage="Ingrese un Identificador" CssClass="text-danger"
                             ControlToValidate="IdeTxt">

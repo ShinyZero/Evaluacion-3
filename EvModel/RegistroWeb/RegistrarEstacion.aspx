@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label class="form-label" for="IdTxt">ID</label>
-                        <asp:TextBox runat="server" ID="IdTxt" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox runat="server" type="number" ID="IdTxt" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                             ErrorMessage="Debe ingresar su ID" CssClass="text-danger"
                             ControlToValidate="IdTxt">

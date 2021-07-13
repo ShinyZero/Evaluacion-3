@@ -32,7 +32,7 @@ namespace RegistroWeb
             //Boton Actualizar
 
             PuntoTabla(puntosCargaDAL.GetAll());
-            
+
         }
 
         protected void TipoRdl_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,9 +53,48 @@ namespace RegistroWeb
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void PuntoCargaGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            }   
+            IdentificadorTxt.Text = ((GridView)sender).SelectedRow.Cells[0].Text;
+            Vidatxt.Text = ((GridView)sender).SelectedRow.Cells[3].Text;
         }
+
+        protected void ActualizarBtn_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                string identificador = IdentificadorTxt.Text.Trim();
+                string capMax = capaTxt.Text.Trim();
+                string tipo = TipoRdl.SelectedValue;
+                string vida = Vidatxt.Text.Trim();
+
+                PuntoCarga p = new PuntoCargaDAL().Update(identificador);
+                p.Identificador = identificador;
+                p.CapMax = capMax;
+                p.Tipo = tipo;
+                p.VidaUtil = vida;
+                mensajeLb1.Text = "Punto Carga actualizado";
+                PuntoTabla(puntosCargaDAL.GetAll());
+                limpiar();
+
+            }
+            else
+            {
+
+            }
+
+        }
+        private void limpiar()
+        {
+            IdentificadorTxt.Text = "";
+            capaTxt.Text = "";
+            TipoRdl.SelectedIndex = 0;
+            Vidatxt.Text = "";
+        }
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            Vidatxt.Text = Calendar1.SelectedDate.ToShortDateString();
+        }
+
     }
+}
