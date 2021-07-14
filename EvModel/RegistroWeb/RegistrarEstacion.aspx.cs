@@ -31,8 +31,7 @@ namespace RegistroWeb
                 string direccion = DireccionTxt.Text.Trim();
                 String regiones = estacionDBL.SelectedValue; 
                 string CapCarga = CapCargaTxt.Text.Trim();
-                string horario = horarioTxt.Text.Trim();
-
+                string horario = horarioAperturaTxt.Text.Trim() + "-" + horarioCierreTxt.Text.Trim();
                 Estacion es = new Estacion();
 
                 es.Id = id;
@@ -60,7 +59,8 @@ namespace RegistroWeb
             DireccionTxt.Text = "";
             estacionDBL.SelectedIndex = 0;
             CapCargaTxt.Text = "";
-            horarioTxt.Text = "";
+            horarioAperturaTxt.Text = "";
+            horarioCierreTxt.Text = "";
         }
 
         protected void HorarioCV_ServerValidate(object source, ServerValidateEventArgs args)

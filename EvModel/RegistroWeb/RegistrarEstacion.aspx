@@ -41,11 +41,20 @@
                             ControlToValidate="CapCargaTxt">
                         </asp:RequiredFieldValidator>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="horarioTxt">Horario</label>
-                        <asp:TextBox runat="server" ID="horarioTxt" CssClass="form-control"></asp:TextBox>
+                   <div class="mb-3">
+                        <label class="form-label" for="horarioAperturaTxt">Horario de Apertura</label>
+                        <asp:TextBox runat="server" ID="horarioAperturaTxt" CssClass="form-control"></asp:TextBox>
                          <asp:CustomValidator ID="HorarioCV" runat="server" ErrorMessage="CustomValidator"
-                            CssClass="text-danger" ControlToValidate="horarioTxt" OnServerValidate="HorarioCV_ServerValidate"
+                            CssClass="text-danger" ControlToValidate="horarioAperturaTxt" OnServerValidate="HorarioCV_ServerValidate"
+                            ValidateEmptyText="true"
+                            ></asp:CustomValidator>
+                        
+                    </div>
+                      <div ">
+                         <label class="form-label" for="horarioCierreTxt">Horario de Ciere</label>
+                        <asp:TextBox runat="server" ID="horarioCierreTxt" CssClass="form-control" ></asp:TextBox>
+                         <asp:CustomValidator ID="CustomValidator2" runat="server" ErrorMessage="CustomValidator"
+                            CssClass="text-danger" ControlToValidate="horarioCierreTxt" OnServerValidate="HorarioCV_ServerValidate"
                             ValidateEmptyText="true"
                             ></asp:CustomValidator>
                     </div>

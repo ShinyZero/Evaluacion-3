@@ -45,7 +45,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="VidaTxt">Vida Util</label>
-                        <asp:TextBox runat="server" ID="VidaTxt" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ReadOnly="true" runat="server" ID="VidaTxt" CssClass="form-control"></asp:TextBox>
                         <asp:Calendar ID="Calendar1" runat="server" SelectionMode="DayWeekMonth" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                             ErrorMessage="Seleccione una fecha" CssClass="text-danger"
