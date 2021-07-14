@@ -49,5 +49,16 @@ namespace EvModel.DAL
             
             
         }
+
+        public bool PuntoCargaExiste(string id)
+        {
+
+            PuntoCarga puntoCarga = puntoCargas.Find(e => e.Identificador == id);
+            if (puntoCarga == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

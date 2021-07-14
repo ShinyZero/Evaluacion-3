@@ -113,5 +113,16 @@ namespace EvModel.DAL
             Estacion estacion = estaciones.Find(e => e.Id == Id);
             estaciones.Remove(estacion);
         }
+
+        public bool EstacionExiste(string id)
+        {
+
+            Estacion estacion = estaciones.Find(e => e.Id == id);
+            if (estacion == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

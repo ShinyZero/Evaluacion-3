@@ -42,9 +42,10 @@ namespace RegistroWeb
                 es.Horario = horario;
 
                 new EstacionDAL().Add(es);
-                mensajeLbl.Text = "Estacion Ingresada";
+                //mensajeLbl.Text = "Estacion Ingresada";
                 limpiar();
 
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + "Estacion registrada" + "');", true);
             }
             else
             {
@@ -66,7 +67,25 @@ namespace RegistroWeb
         {
 
         }
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            EstacionDAL test = new EstacionDAL();
+            string id = IdTxt.Text.Trim();
+            if (test.EstacionExiste(id))
+            {
 
-       
+                CustomValidator1.ErrorMessage = "ATENCION! El identificador de la Estacion ya se encuentra registrado";
+                args.IsValid = false;
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + "ATENCION! El identificador de la Estacion ya se encuentra registrado" + "');", true);
+
+
+            }
+            else if (id == "")
+            {
+                CustomValidator1.ErrorMessage = "ATENCION! El identificador no puede quedar vacío";
+                args.IsValid = false;
+            }
+        }
+
     }
 }

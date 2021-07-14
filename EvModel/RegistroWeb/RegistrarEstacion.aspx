@@ -17,12 +17,10 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <label class="form-label" for="IdTxt">ID</label>
+                        <label class="form-label" for="IdTxt">ID de la Estación</label>
                         <asp:TextBox runat="server" type="number" ID="IdTxt" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                            ErrorMessage="Debe ingresar su ID" CssClass="text-danger"
-                            ControlToValidate="IdTxt">
-                        </asp:RequiredFieldValidator>
+                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator" CssClass="text-danger"
+                           ControlToValidate="IdTxt" OnServerValidate="CustomValidator1_ServerValidate" ValidateEmptyText="true" ></asp:CustomValidator>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="DireccionTxt">Direccion</label>

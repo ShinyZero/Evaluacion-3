@@ -20,6 +20,13 @@ namespace RegistroWeb
                 TipoRdl.DataTextField = "Tipo";
                 TipoRdl.DataValueField = "Tipo";
                 TipoRdl.DataBind();
+
+                EstacionDAL estaciones = new EstacionDAL();
+                IdEstacion.DataSource = estaciones.GetAll();
+                IdEstacion.DataTextField = "direccion";
+                //seria mejor mostrar la direccion en vez de la id en la grilla de mostrar los puntos de carga
+                IdEstacion.DataValueField = "id";
+                IdEstacion.DataBind();
             }
         }
 
@@ -40,7 +47,7 @@ namespace RegistroWeb
                 new PuntoCargaDAL().Add(p);
                 mensajeLb1.Text = "Punto Carga Registrado";
                 limpiar();
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + "Punto de carga registrado" + "');", true);
             }
             else
             {
@@ -58,6 +65,26 @@ namespace RegistroWeb
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             VidaTxt.Text = Calendar1.SelectedDate.ToShortDateString();
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            PuntoCargaDAL test = new PuntoCargaDAL();
+            string id = IdeTxt.Text.Trim();
+            if (test.PuntoCargaExiste(id))
+            {
+
+                CustomValidator1.ErrorMessage = "ATENCION! El identificador de punto de carga ya se encuentra registrado";
+                args.IsValid = false;
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + "ATENCION! El identificador de la Estacion ya se encuentra registrado" + "');", true);
+
+
+            }
+            else if (id == "")
+            {
+                CustomValidator1.ErrorMessage = "ATENCION! El identificador no puede quedar vacío";
+                args.IsValid = false;
+            }
         }
     }
 }

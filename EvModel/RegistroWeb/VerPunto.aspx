@@ -56,7 +56,11 @@
                             ErrorMessage="Primero seleccione el Punto de carga que quiere actualizar " CssClass="text-danger"
                             ControlToValidate="IdentificadorTxt">
                         </asp:RequiredFieldValidator>
-                    </div>  
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="IdEstacion">Identificador de Estacion</label>
+                           <asp:DropDownList ID="IdEstacion" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label" for="capaTxt">Capacidad Maxima</label>
                         <asp:TextBox runat="server" Type="number" ID="capaTxt" CssClass="form-control" MaxLength="1" ></asp:TextBox>
@@ -75,7 +79,7 @@
                      <div class="mb-3">
                         <label class="form-label" for="Vidatxt">Vida Util</label> 
                         <asp:TextBox ReadOnly="true" runat="server" ID="Vidatxt" CssClass="form-control"></asp:TextBox>  
-                         <asp:Calendar ID = "Calendar1" runat = "server" SelectionMode="DayWeekMonth" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
+                         <asp:Calendar class="text-center" ID = "Calendar1" runat = "server" SelectionMode="DayWeekMonth" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
                             ErrorMessage="Seleccione una fecha" CssClass="text-danger"
                             ControlToValidate="VidaTxt">

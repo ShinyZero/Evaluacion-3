@@ -24,6 +24,13 @@ namespace RegistroWeb
             if (!IsPostBack)
             {
                 PuntoTabla(puntosCargaDAL.GetAll());
+
+                EstacionDAL estaciones = new EstacionDAL();
+                IdEstacion.DataSource = estaciones.GetAll();
+                IdEstacion.DataTextField = "direccion";
+                //seria mejor mostrar la direccion en vez de la id en la grilla de mostrar los puntos de carga
+                IdEstacion.DataValueField = "id";
+                IdEstacion.DataBind();
             }
         }
 
@@ -56,7 +63,7 @@ namespace RegistroWeb
         protected void PuntoCargaGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
             IdentificadorTxt.Text = ((GridView)sender).SelectedRow.Cells[0].Text;
-            Vidatxt.Text = ((GridView)sender).SelectedRow.Cells[3].Text;
+            
         }
 
         protected void ActualizarBtn_Click(object sender, EventArgs e)
@@ -67,19 +74,17 @@ namespace RegistroWeb
                 string capMax = capaTxt.Text.Trim();
                 string tipo = TipoRdl.SelectedValue;
                 string vida = Vidatxt.Text.Trim();
-
+                string estacion = IdEstacion.Text.Trim();
                 PuntoCarga p = new PuntoCargaDAL().Update(identificador);
                 p.Identificador = identificador;
                 p.CapMax = capMax;
                 p.Tipo = tipo;
                 p.VidaUtil = vida;
+                p.Estacion = estacion;
+
                 mensajeLb1.Text = "Punto Carga actualizado";
                 PuntoTabla(puntosCargaDAL.GetAll());
                 limpiar();
-
-            }
-            else
-            {
 
             }
 
